@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const routes = require("./routes");
+const port = parseInt(process.env.PORT, 10) || 3333;
 
 const server = express();
 
@@ -16,4 +17,4 @@ server.use(express.json());
 
 server.use(routes);
 
-server.listen(3333);
+server.listen(port);
