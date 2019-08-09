@@ -3,8 +3,7 @@ const Dev = require('../models/Dev');
 
 module.exports = {
     async index(req, res) {
-        let { user } = req.headers;
-        user = user.toLowerCase();
+        const { user } = req.headers;
 
         const loggedUser = await Dev.findById(user);
 
@@ -20,7 +19,8 @@ module.exports = {
     },
 
     async store(req, res) {
-        const { username } = req.body;
+        let { username } = req.body;
+        username = username.toLowerCase();
 
         const userExist = await Dev.findOne({ user: username });
 
