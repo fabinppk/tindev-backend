@@ -3,7 +3,8 @@ const Dev = require('../models/Dev');
 
 module.exports = {
     async index(req, res) {
-        const { user } = req.headers;
+        let { user } = req.headers;
+        user = user.toLowerCase();
 
         const loggedUser = await Dev.findById(user);
 

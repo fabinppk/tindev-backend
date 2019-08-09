@@ -17,6 +17,7 @@
     "rules": {
         "indent": ["error", 4, { "SwitchCase": 1 }],
         "import/extensions": "off",
+        "no-underscore-dangle": "off",
         "import/no-duplicates": "off",
         "import/order": "off",
         "import/no-self-import": "off",
